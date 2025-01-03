@@ -6,10 +6,15 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: `
     <h1>Welcome to {{title}}!</h1>
+    <p>Hello world</p>
 
     <router-outlet />
   `,
-  styles: [],
+  styles: [`
+    p{
+      background-color:red;
+    }
+    `],
 })
 export class AppComponent {
   title = 'first-ng-app';
