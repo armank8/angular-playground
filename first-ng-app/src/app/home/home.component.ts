@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { GreetingsComponent } from '../components/greetings/greetings.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [GreetingsComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-
+  homeMessage = signal('Hello good day');
 }
