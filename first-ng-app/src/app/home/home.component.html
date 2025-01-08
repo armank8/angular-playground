@@ -1,3 +1,5 @@
 <p>home works!</p>
-<app-greetings [message]="'Hello, world 1234!'" />
+<!-- <app-greetings [message]="'Hello, world 1234!'" /> -->
 <app-greetings [message]="homeMessage()" />
+
+<input type="text" (keyup)="keyUpHandler($event)">
