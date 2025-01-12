@@ -2,10 +2,12 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { TodosService } from '../services/todos.service';
 import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
+import { TodoItemComponent } from '../components/todo-item/todo-item.component';
+// import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-todos',
-  imports: [],
+  imports: [TodoItemComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
 })
@@ -27,5 +29,9 @@ export class TodosComponent implements OnInit {
       });
     // console.log(this.todoService.todoItems);
     // this.todoItems.set(this.todoService.todoItems);
+  }
+
+  todoToggled(todoItem:Todo){
+    
   }
 }
