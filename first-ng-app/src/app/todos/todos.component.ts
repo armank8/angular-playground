@@ -14,6 +14,7 @@ import { TodoItemComponent } from '../components/todo-item/todo-item.component';
 export class TodosComponent implements OnInit {
   todoService = inject(TodosService);
   todoItems = signal<Array<Todo>>([]);
+  // console.log(todoItems);
 
   ngOnInit(): void {
     this.todoService
@@ -31,7 +32,17 @@ export class TodosComponent implements OnInit {
     // this.todoItems.set(this.todoService.todoItems);
   }
 
-  todoToggled(todoItem:Todo){
-    
+  UpdateTodoItem(todoItem: Todo) {
+    this.todoItems.update((todos) => {
+      return todos.map((todo) => {
+        if (todo.id === todoItem.id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      });
+    });
   }
 }
