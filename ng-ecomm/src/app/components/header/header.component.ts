@@ -3,15 +3,11 @@ import { Component, signal } from '@angular/core';
 @Component({
   selector: 'app-header',
   imports: [],
-  template: ` <p class="header">Hello {{ title() }}</p> `,
-  styles: `
-  .header{
-    background:rgba(0,0,0,0.5);
-    color:black;
-    padding:1rem;
-  }
+  template: `
+    <p class="bg-slate-100 px-4 py-3 shadow-md">
+      <span>My Store</span>
+    </p>
   `,
+  styles: ``,
 })
-export class HeaderComponent {
-  title = signal('ng-ecomm-app');
-}
+export class HeaderComponent {}
