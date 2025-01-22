@@ -7,6 +7,4 @@ import { HeaderComponent } from './components/header/header.component';
   template: ` <app-header></app-header> `,
   styles: ``,
 })
-export class AppComponent {
-  title = 'ng-ecomm';
-}
+export class AppComponent {}

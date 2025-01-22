@@ -5,11 +5,20 @@ import { PrimaryButtonComponent } from '../primary-button/primary-button.compone
   selector: 'app-header',
   imports: [PrimaryButtonComponent],
   template: `
-    <p class="bg-slate-100 px-4 py-3 shadow-md flex justify-between">
-      <span>My Store</span>
-      <app-primary-button></app-primary-button>
+    <p
+      class="bg-slate-100 px-4 py-3 shadow-md flex justify-between items-center"
+    >
+      <span class="text-xl">My Store</span>
+      <app-primary-button
+        label="cart"
+        (btnClicked)="showButtonClicked()"
+      ></app-primary-button>
     </p>
   `,
   styles: ``,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  showButtonClicked() {
+    console.log('clicked');
+  }
+}
