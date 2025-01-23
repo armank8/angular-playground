@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { PrimaryButtonComponent } from '../primary-button/primary-button.compone
     >
       <span class="text-xl">My Store</span>
       <app-primary-button
-        label="cart"
+        [label]="'cart(' + cartService.cart().length + ')'"
         (btnClicked)="showButtonClicked()"
       ></app-primary-button>
     </p>
@@ -21,4 +22,6 @@ export class HeaderComponent {
   showButtonClicked() {
     console.log('clicked');
   }
+
+  cartService = inject(CartService);
 }
